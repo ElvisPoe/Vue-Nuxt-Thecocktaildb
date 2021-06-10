@@ -12,6 +12,14 @@
       <h2 class="subtitle">
         <a href="https://vuesax.com/">Vuesax</a> is a framework of ui components for <a href="https://vuejs.org/">Vuejs</a>, It was created to make new interfaces that have a new trend and are visually beautiful
       </h2>
+
+      <vs-row justify="center">
+        <vs-col w="2">
+          <vs-button :active="active == 1" @click="active = 0">Active</vs-button>
+        </vs-col>
+      </vs-row>
+
+
       <div class="links">
         <h3 class="h3">
           Vuesax
