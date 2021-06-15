@@ -1,4 +1,4 @@
-# vuecocktail
+# VueCocktail
 
 ## Build Setup
 

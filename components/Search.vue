@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="centerx icons-example">
-<!--    <vs-input class='search-bar' placeholder="Search Cocktail" />-->
+    <vs-input class='search-bar' placeholder="Search Cocktail" />
   </div>
 </template>
 
