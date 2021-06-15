@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Search />
-      <List />
+<!--      <List />-->
     </div>
   </div>
 </template>
