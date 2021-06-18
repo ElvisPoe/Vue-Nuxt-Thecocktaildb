@@ -2,19 +2,27 @@
   <div class="container">
     <div>
       <Search />
-<!--      <List />-->
     </div>
   </div>
 </template>
 
 <script>
-import Search from '~/components/Search.vue'
-import List from '~/components/List.vue'
+// import Search from '~/components/Search.vue'
+// import List from '~/components/List.vue'
 
 export default {
-  components: {
-    Search,
-    List,
+  // components: {
+  //   Search
+  // },
+
+  methods: {
+    async getCocktailData(id) {
+      this.cocktails = await fetch(
+        'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id
+      ).then((res) => res.json())
+
+      // console.log(this.cocktails.drinks);
+    }
   },
 }
 </script>

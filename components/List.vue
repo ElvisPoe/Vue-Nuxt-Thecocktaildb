@@ -1,43 +1,30 @@
 <template>
   <div>
-    <div>
-      <h1>Cocktails</h1>
-      <p v-for="cocktail of cocktails">
-        {{ cocktail }}
-      </p>
+    <div class="bottom-space">
+      <p>ID: {{ cocktail.idDrink }} | NAME: {{ cocktail.strDrink }}</p>
+      <img
+        :alt=cocktail.strDrink
+        :src=cocktail.strDrinkThumb
+      />
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-
-  data() {
-    return {
-      cocktails: this.cocktails,
+  props: {
+    cocktail: {
+      type: Object
     }
-  },
-
-  created(){
-    // var inputData = fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
-    // console.log(inputData)
-    // console.log(JSON.stringify(inputData))
-    // console.log(';)')
-  },
-
-  methods: {
-    collectData() {
-
-    },
-  },
-
-  async fetch() {
-      this.cocktailsByType = await fetch(
-        'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Egg yolk'
-      ).then((res) => res.json())
-
-      ///https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15300
-    },
   }
+}
 </script>
+
+<style scoped>
+h1 {
+  margin-top: 3rem;
+}
+.bottom-space {
+  margin-bottom: 3rem;
+}
+</style>
