@@ -9,7 +9,15 @@
       </vs-select>
     </div>
 
-    <List v-for="cocktail in this.cocktails.drinks" :cocktail="cocktail" />
+    <template>
+      <div class="center grid">
+        <vs-row>
+          <List :key="index" :cocktail="cocktail" v-for="cocktail in this.cocktails.drinks" vs-type="flex" vs-justify="center" vs-align="center" w="6" />
+        </vs-row>
+      </div>
+    </template>
+
+
 
   </div>
 </template>

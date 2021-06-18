@@ -1,5 +1,7 @@
 <template>
-  <div>
+
+
+  <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6">
     <div class="bottom-space">
       <p>ID: {{ cocktail.idDrink }} | NAME: {{ cocktail.strDrink }}</p>
       <img
@@ -7,8 +9,10 @@
         :src=cocktail.strDrinkThumb
       />
     </div>
-  </div>
+  </vs-col>
+
 </template>
+
 
 <script>
 export default {
