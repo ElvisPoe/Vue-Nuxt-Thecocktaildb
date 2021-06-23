@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <Header />
-    <Search />
-    <Footer />
+    <List />
+<!--    <Footer />-->
   </div>
 </template>
 
