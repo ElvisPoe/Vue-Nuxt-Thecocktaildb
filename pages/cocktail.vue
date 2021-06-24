@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="margin-top: 10vh;">
+  <div class="container">
 
     <vs-card type="5">
 
@@ -66,6 +66,13 @@
         </vs-tooltip>
       </template>
     </vs-card>
+
+    <a href="/" class="icon-link mt-3">
+      <vs-button info icon>
+        <i class='bx bx-arrow-back'></i>
+        <span class="span">Back</span>
+      </vs-button>
+    </a>
   </div>
 </template>
 
@@ -84,7 +91,7 @@ export default {
     )
 
     console.log(this.$route.query.id);
-    console.log(this.$route.params);
+    console.log(this.$route);
 
     this.cocktailData = tempCocktailData.drinks[0];
   },
@@ -92,6 +99,22 @@ export default {
 }
 </script>
 <style>
+  .container {
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .vs-card__interactions {
+    width: 100%;
+    justify-content: center;
+  }
+  .mt-3 {
+   margin-top: 3rem;
+  }
   a.icon-link {
     color: white;
     text-decoration: none;
