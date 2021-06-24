@@ -64,24 +64,8 @@
             <p v-if="cocktailData.strIngredient15">{{ cocktailData.strIngredient15 }} - {{ cocktailData.strMeasure15 }}</p>
           </template>
         </vs-tooltip>
-
       </template>
-
     </vs-card>
-
-
-    <!--<div class="center examplex" style="text-align: center;">
-      <img :src="cocktailData.strDrinkThumb" alt="">
-    </div>
-
-
-    <p v-if="cocktailData.strDrink">{{ cocktailData }}</p>
-    <p v-if="cocktailData.strDrink">{{ cocktailData.idDrink }}</p>
-    <p v-if="cocktailData.strDrink">{{ cocktailData.strDrink }}</p>
-    <p v-if="cocktailData.strDrink">{{ cocktailData.strDrinkAlternate }}</p>
-    <p v-if="cocktailData.strDrink">{{ cocktailData.strAlcoholic }}</p>
-    <p v-if="cocktailData.strDrink">{{ cocktailData.strInstructions }}</p>
-    <p v-if="cocktailData.strDrinkThumb">{{ cocktailData.strDrinkThumb }}</p> -->
   </div>
 </template>
 
@@ -98,6 +82,10 @@ export default {
     ).then(
       (res) => res.json()
     )
+
+    console.log(this.$route.query.id);
+    console.log(this.$route.params);
+
     this.cocktailData = tempCocktailData.drinks[0];
   },
 
