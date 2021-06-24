@@ -1,30 +1,29 @@
 <template>
   <div class="center examplex">
-    <vs-navbar center-collapsed v-model="active">
-
+    <vs-navbar center-collapsed>
       <template #left>
         <a href="/">
           <img src="https://www.thecocktaildb.com/images/logo.png" alt="">
         </a>
       </template>
-
       <vs-select placeholder="Select" v-model="value" v-on:change="getCocktails(value)">
         <vs-option v-for="ingredient of ingredients['drinks']" :label="ingredient.strIngredient1" :value="ingredient.strIngredient1">
           {{ ingredient.strIngredient1 }}
         </vs-option>
       </vs-select>
-
       <template #right>
-        <vs-button>Get Started</vs-button>
-        <vs-avatar primary badge badge-color="success">
-          <i class='bx bxs-hot' ></i>
-        </vs-avatar>
+        <a href="/">
+          <vs-button>Clear</vs-button>
+        </a>
+<!--        <vs-avatar primary badge badge-color="success">-->
+<!--          <i class='bx bxs-hot' ></i>-->
+<!--        </vs-avatar>-->
       </template>
     </vs-navbar>
 
     <div class="cocktails-cards-container">
       <vs-row direction="row" justify="space-evenly">
-        <Cocktail :key="index" :cocktail="cocktail" v-for="cocktail in this.cocktails.drinks" vs-type="flex" vs-justify="center" vs-align="center" w="12" />
+        <CocktailCard :key="index" :cocktail="cocktail" v-for="cocktail in this.cocktails.drinks" vs-type="flex" vs-justify="center" vs-align="center" w="12" />
       </vs-row>
     </div>
 
@@ -42,9 +41,9 @@
       }
     },
 
-    created(){
-      this.cocktails = fetch(
-        'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin'
+    async created(){
+      this.cocktails = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/random.php`
       ).then(
         (res) => res.json()
       )
@@ -73,6 +72,9 @@
 </script>
 
 <style scoped>
+  a {
+    text-decoration: none;
+  }
   .vs-navbar-content {
     padding: 15px;
   }

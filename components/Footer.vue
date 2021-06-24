@@ -1,7 +1,7 @@
 <template>
-  <div class="center">
+  <div class="center examplex">
     <vs-button flat icon @click="openNotification(null, 'primary')">
-      <i class='bx bx-border-radius b-r'></i>
+      Here is my suggestion
     </vs-button>
   </div>
 </template>
@@ -12,8 +12,8 @@ export default {
       const noti = this.$vs.notification({
         color,
         position,
-        title: 'Documentation Vuesax 4.0+',
-        text: 'These documents refer to the latest version of vuesax (4.0+), to see the documents of the previous versions you can do it here 👉 Vuesax 3.x'
+        title: 'A cocktail suggestion - By Poe',
+        text: 'Random cocktail picked up as a suggestion. Surprisingly the best cocktails are shown!'
       })
     }
   }

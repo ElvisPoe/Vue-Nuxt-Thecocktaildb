@@ -27,14 +27,8 @@ export default {
   },
 
   methods: {
-    async showCocktail(cocktail) {
-        this.cocktailData = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail.idDrink}`
-        ).then(
-          (res) => res.json()
-        )
-      this.$router.push ({name: 'cocktail', params: {cocktailData: this.cocktailData.drinks[0]}})
-
+    showCocktail(cocktail) {
+      this.$router.push({path: `/cocktail?id=${cocktail.idDrink}`})
     }
   },
 
