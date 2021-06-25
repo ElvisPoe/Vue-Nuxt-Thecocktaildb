@@ -1,5 +1,5 @@
 <template>
-  <div class="center examplex">
+  <div class="center examplex mt-3">
     <vs-button flat icon @click="openNotification(null, 'primary')">
       Here is my suggestion
     </vs-button>
@@ -19,3 +19,8 @@ export default {
   }
 }
 </script>
+<style>
+.mt-3 {
+ margin-top: 3rem;
+}
+</style>
