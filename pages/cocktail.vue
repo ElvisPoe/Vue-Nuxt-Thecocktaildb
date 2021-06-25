@@ -80,12 +80,24 @@
 export default {
   data() {
     return {
-      cocktailData: []
+      cocktailData: [],
+      cocktailId: ''
     }
   },
+
+  // asyncData({ route }) {
+  //   const id = route.query.id; // When calling /abc the slug will be "abc"
+  //   return { id };
+  // },
+
+  beforeMount() {
+    // get shop data
+    this.cocktailId = this.$route.query.id;
+  },
+
   async fetch() {
     var tempCocktailData = await fetch(
-      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.$route.query.id}`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.cocktailId}`
     ).then(
       (res) => res.json()
     )

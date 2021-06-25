@@ -1,5 +1,5 @@
 <template>
-  <vs-card type="1" class="mb-1-5" @click="showCocktail(cocktail)">
+  <vs-card type="1" class="mb-1-5" :to="{ name: 'cocktail', query: { id: cocktail.idDrink } }">
 
     <template #title>
       <h3> {{ cocktail.strDrink }}</h3>
